@@ -1,6 +1,6 @@
-## alx-low_level_programming
+### 0. Preprocessor
 
-This is introduction to alx C programming language course.
+This directory has a script that runs a C file through the preprocessor and save the result into another file.
 
-This course will enable the participants to learn and know how to use
-the language language called `C`.
+ - The C file name will be saved in the variable $CFILE
+ - The output is saved in the file c
