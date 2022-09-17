@@ -6,7 +6,17 @@ if [[ $# -eq 0 ]]; then
 fi
 
 filename=$1
+otherfile=$2
 
 export CFILE="$filename"
 
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 positive_or_negative.c "$CFILE" -o 0-main
+export OCFILE="$otherfile"
+
+output_file=${1%.*}
+echo "$output_file"
+
+if [ -n $OCFILE ]; then
+	gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$CFILE" -o "$output_file"
+else
+  gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$OCFILE" "$CFILE" -o "$output_file"
+fi
