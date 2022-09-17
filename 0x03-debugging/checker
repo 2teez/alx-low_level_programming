@@ -13,9 +13,8 @@ export CFILE="$filename"
 export OCFILE="$otherfile"
 
 output_file=${1%.*}
-echo "$output_file"
 
-if ! [ -n $OCFILE ]; then
+if [ -z "$OCFILE" ]; then
 	gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$CFILE" -o "$output_file"
 else
   gcc -std=gnu89 "$CFILE" -o "$output_file"
