@@ -1,21 +1,41 @@
 #!/bin/bash
 
-if [[ $# -eq 0 ]]; then
-    echo "Usage: $0 <files_to_use>"
-		exit 1
-fi
+usage() {
+	#if [[ $# -eq 0 ]]; then
+	echo "Usage: $0 <-z|-w|-a> <files_to_use>"
+	exit 1
+	#fi
+}
 
-filename=$1
-otherfile=$2
-
-export CFILE="$filename"
-
-export OCFILE="$otherfile"
-
-output_file=${1%.*}
-
-if [ -z "$OCFILE" ]; then
-	gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$CFILE" -o "$output_file"
-else
-  gcc -std=gnu89 "$CFILE" -o "$output_file"
-fi
+while getopts ':z:w:a:f:' opts; do
+	case "$opts" in
+	f)
+		CFILE=${OPTARG}
+		./formatter.pl "$CFILE"
+		;;
+	z)
+		CFILE=${OPTARG}
+		output_file=${CFILE%.*}
+		echo "$output_file"
+		gcc -std=gnu89 "$CFILE" -o "$output_file" && ./"$output_file"
+		;;
+	w)
+		CFILE=${OPTARG}
+		output_file=${CFILE%.*}
+		echo "$output_file"
+		gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$CFILE" -o "$output_file" &&
+			./"$output_file"
+		;;
+	a)
+		shift
+		CFILE=${OPTARG}
+		output_file=${CFILE%.*}
+		shift
+		OCFILE="$*"
+		echo "$OCFILE" "$CFILE" "$output_file"
+		gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$@" "$CFILE" -o "$output_file" &&
+			./"$output_file"
+		;;
+	*) usage ;;
+	esac
+done
