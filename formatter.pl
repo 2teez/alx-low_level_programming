@@ -14,6 +14,8 @@ if ( $filename eq "None" ) {
 
 my $tab_index = 0;
 
+$/ = "\n";
+
 my $container =
   make_tmp_file( { input => $filename, output => "${filename}.bak" } );
 
