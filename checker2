@@ -11,7 +11,7 @@ while getopts ':z:w:a:f:' opts; do
 	case "$opts" in
 	f)
 		CFILE=${OPTARG}
-		.formatter.pl "$CFILE"
+		./formatter.pl "$CFILE"
 		;;
 	z)
 		CFILE=${OPTARG}
