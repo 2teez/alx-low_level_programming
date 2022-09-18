@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_line - prints numbers from 0 to 14, 10 times.
+ * print_line - prints lines
  * @n: first integer value
  * Return: void
  */
