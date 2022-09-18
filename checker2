@@ -1,0 +1,41 @@
+#!/bin/bash
+
+usage() {
+	#if [[ $# -eq 0 ]]; then
+	echo "Usage: $0 <-z|-w|-a> <files_to_use>"
+	exit 1
+	#fi
+}
+
+while getopts ':z:w:a:f:' opts; do
+	case "$opts" in
+	f)
+		CFILE=${OPTARG}
+		perl formatter.pl "$CFILE"
+		;;
+	z)
+		CFILE=${OPTARG}
+		output_file=${CFILE%.*}
+		echo "$output_file"
+		gcc -std=gnu89 "$CFILE" -o "$output_file" && ./"$output_file"
+		;;
+	w)
+		CFILE=${OPTARG}
+		output_file=${CFILE%.*}
+		echo "$output_file"
+		gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$CFILE" -o "$output_file" &&
+			./"$output_file"
+		;;
+	a)
+		shift
+		CFILE=${OPTARG}
+		output_file=${CFILE%.*}
+		shift
+		OCFILE="$*"
+		echo "$OCFILE" "$CFILE" "$output_file"
+		gcc -Wall -pedantic -Werror -Wextra -std=gnu89 "$@" "$CFILE" -o "$output_file" &&
+			./"$output_file"
+		;;
+	*) usage ;;
+	esac
+done
