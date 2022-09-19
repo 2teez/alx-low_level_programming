@@ -7,7 +7,7 @@ usage() {
 	#fi
 }
 
-while getopts ':z:w:a:y:l' opts; do
+while getopts ':z:w:a:y:l:' opts; do
 	case "$opts" in
 	y)
 		CFILE=${OPTARG}
