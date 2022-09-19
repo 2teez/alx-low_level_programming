@@ -7,11 +7,15 @@ usage() {
 	#fi
 }
 
-while getopts ':z:w:a:f:' opts; do
+while getopts ':z:w:a:y:l' opts; do
 	case "$opts" in
-	f)
+	y)
 		CFILE=${OPTARG}
-		./formatter.pl "$CFILE"
+		python3 formatter.py "$CFILE"
+		;;
+	l)
+		CFILE=${OPTARG}
+		perl formatter.pl "$CFILE"
 		;;
 	z)
 		CFILE=${OPTARG}

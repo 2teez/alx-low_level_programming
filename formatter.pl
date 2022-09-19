@@ -17,7 +17,7 @@ my $tab_index = 0;
 $/ = "\n";
 
 my $container =
-  make_tmp_file( { input => $filename, output => "${filename}.bak" } );
+  make_tmp_file( { input => $filename, output => "${filename}._pl.bak" } );
 
 open $fh,  '<', $container->{'output'};
 open $fhn, '>', $container->{'input'};

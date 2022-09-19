@@ -15,7 +15,7 @@ class Formatter:
 
     def parse_read_file(self) -> None:
         import re
-        with open(f'{self._filename}.bak', 'w') as fout:
+        with open(f'{self._filename}._py.bak', 'w') as fout:
             with open(self._filename) as fin:
                 for line in fin.readlines():
                     line.strip()
