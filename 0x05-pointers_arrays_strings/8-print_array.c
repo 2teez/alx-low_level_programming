@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * print_array - prints squares
- * @str: the first parameter
+ * @a: the first parameter
+ * @n: the second parameter
  * Return: void
  */
 
