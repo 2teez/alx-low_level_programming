@@ -32,11 +32,11 @@ void puts_half(char *str)
 	else
 	{
 		n = length_of_the_string / 2;
-		for (i = n; i < length_of_the_string; i++)
-		{
-			_putchar(c[i]);
-		}
 	}
 
+	for (i = n; i < length_of_the_string; i++)
+	{
+		_putchar(c[i]);
+	}
 	_putchar('\n');
 }
