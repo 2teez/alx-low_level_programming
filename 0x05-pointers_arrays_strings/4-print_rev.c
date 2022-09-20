@@ -22,4 +22,5 @@ void print_rev(char *s)
 			break;
 		}
 	}
+	_putchar('\n');
 }
