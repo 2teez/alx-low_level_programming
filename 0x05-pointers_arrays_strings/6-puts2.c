@@ -25,7 +25,7 @@ void puts2(char *str)
 
 	for (i = 0; i < count; i++)
 	{
-		if ((c[i]) % 2 == 0)
+		if ((c[i] + '0') % 2 == 0)
 		{
 			_putchar(c[i]);
 		}
