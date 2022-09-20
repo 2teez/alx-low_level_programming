@@ -2,7 +2,7 @@
 
 usage() {
 	#if [[ $# -eq 0 ]]; then
-	echo "Usage: $0 <-z|-w|-a> <files_to_use>"
+	echo "Usage: $0 <-y|-l|-z|-w|-a> <files_to_use>"
 	exit 1
 	#fi
 }
