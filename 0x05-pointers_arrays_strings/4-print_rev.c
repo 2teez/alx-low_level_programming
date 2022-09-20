@@ -8,52 +8,18 @@
 void print_rev(char *s)
 {
 
-	/*
-	 *	char *c;
-	 *
-	 *	c = s;
-	 *
-	 *	while (*s++)
-	 *		;
-	 *	while (s--)
-	 *	{
-	 *		_putchar(*s);
-	 *		if (c == s)
-	 *		{
-	 *			break;
-	 *		}
-	 *	}
-	 */
-	int len;
+	char *c;
 
-	int i;
-
-	len = _strlen(s);
-
-	for (i = len - 1; i >= 0; i--)
-	{
-		_putchar(*(s + i));
-	}
-	_putchar('\n');
-}
-
-/**
- * _strlen - prints squares
- * @s: the first parameter
- * Return: void
- */
-
-int _strlen(char *s)
-{
-
-	int count;
-
-	count = 0;
-
+	c = s;
 	while (*s++)
+		;
+	s--;
+	while (s--)
 	{
-		count++;
+		_putchar(*s);
+		if (c == s)
+		{
+			break;
+		}
 	}
-
-	return (count);
 }
