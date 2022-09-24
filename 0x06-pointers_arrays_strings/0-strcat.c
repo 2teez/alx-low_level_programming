@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * count_it - prints squares
+ * count_it - count strings
  * @str: the first parameter
- * Return: void
+ * Return: int
  */
 int count_it(char *str)
 {
@@ -21,10 +21,10 @@ int count_it(char *str)
 }
 
 /**
- * _strcat - prints squares
+ * _strcat - combine two string
  * @dest: the first parameter
  * @src: the second parameter
- * Return: void
+ * Return: char*
  */
 
 char *_strcat(char *dest, char *src)
