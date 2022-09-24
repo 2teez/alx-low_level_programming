@@ -7,7 +7,10 @@
  */
 int count_it(char *str)
 {
-	int count = 0;
+	int count;
+
+	count = 0;
+
 	while (*str != '\0')
 	{
 		count++;
@@ -26,11 +29,25 @@ int count_it(char *str)
 
 char *_strcat(char *dest, char *src)
 {
-	char *tmp = src;
-	int dest_ct = count_it(dest);
-	int src_ct = count_it(src);
-	int counter = 0;
-	for (int i = dest_ct; i < (dest_ct + src_ct); i++)
+	char *tmp;
+
+	int dest_ct;
+
+	int src_ct;
+
+	int counter;
+
+	int i;
+
+	tmp = src;
+
+	dest_ct = count_it(dest);
+
+	src_ct = count_it(src);
+
+	counter = 0;
+
+	for (i = dest_ct; i < (dest_ct + src_ct); i++)
 	{
 		dest[i] = tmp[counter];
 		counter++;
