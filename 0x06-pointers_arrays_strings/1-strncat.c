@@ -17,7 +17,7 @@ int count_it(char *str)
 		str++;
 	}
 
-	return count;
+	return (count);
 }
 
 /**
@@ -50,5 +50,5 @@ char *_strncat(char *dest, char *src, int n)
 		counter++;
 	}
 
-	return dest;
+	return (dest);
 }
