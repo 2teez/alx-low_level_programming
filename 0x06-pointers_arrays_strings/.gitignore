@@ -1,6 +1,8 @@
-_putchar.c
-?-main.c
-0-strcat
 .DS_Store
-*/.DS_Store
+0-main.c
+0-strcat
+1-main.c
 1-strncat
+2-main.c
+_putchar.c
+2-strncpy
