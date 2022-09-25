@@ -55,8 +55,6 @@ int _strcmp(char *s1, char *s2)
 
 	int size;
 
-	int rvalue;
-
 	size = 0;
 
 	if (count_it(s1) >= count_it(s2))
@@ -73,15 +71,14 @@ int _strcmp(char *s1, char *s2)
 
 	if (s1 > s2)
 	{
-		rvalue = -15;
+		return (-15);
 	}
 	else if (s2 > s1)
 	{
-		rvalue = 15;
+		return (15);
 	}
 	else
 	{
-		rvalue = 0;
+		return (0);
 	}
-	return (rvalue);
 }
